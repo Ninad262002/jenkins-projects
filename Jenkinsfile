@@ -13,11 +13,12 @@ pipeline{
 
     stages('deploy website'){
         steps{
-            sh 'ssh -o StrictHostKeyChecking=no ec2-user@${APP_SERVER} "sudo rm -rf /var/www/html/*"'
+            sh """ssh -o StrictHostKeyChecking=no ec2-user@${APP_SERVER} "sudo rm -rf /var/www/html/*"
             scp\
             index.html\
-            ubuntu@${APP_SERVER}:/var/www/html 
-            sudo cp /tmp/index.html /var/www/html/index.html
+            ec2-user@${APP_SERVER}
+            'sudo cp /tmp/index.html /var/www/html/index.html'
+            """
         }
     }
 }
