@@ -1,7 +1,7 @@
 pipeline {
 agent any
 environment {
-   APP_SERVER = "172.31.23.66"
+   APP_SERVER = "172.31.26.200"
 }
 stages {
 stage('checkout') {
