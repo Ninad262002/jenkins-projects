@@ -1,5 +1,9 @@
 pipeline {
 agent any
+
+triggers {
+     githubPush()   
+}
 environment {
    APP_SERVER = "172.31.26.200"
 }
